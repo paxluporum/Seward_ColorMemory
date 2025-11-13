@@ -45,4 +45,18 @@ export class Toolbox {
         return color;
     }
 
+    //clicking stuff
+    isWithinRect(pointX, pointY, rectX, rectY, rectW, rectH) {
+        if(pointX > rectX + rectW) {
+            return false; //too far right
+        } else if(pointX < rectX) {
+            return false; //too far left
+        } else if(pointY < rectY) {
+            return false; //too far up
+        } else if(pointY > rectY + rectH) {
+            return false;
+        } 
+        else return true;
+    }
+
 }
